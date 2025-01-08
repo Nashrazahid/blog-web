@@ -5,10 +5,23 @@ import Link from "next/link";
 import { PortableText } from "@portabletext/react";
 import Hero from "@/components/Hero";
 
+// Define the structure of blog content
+interface BlockContent {
+  _type: 'block';
+  children: { text: string }[];
+}
+
+interface ImageContent {
+  _type: 'image';
+  asset: {
+    _ref: string;
+  };
+}
+
 // Define the structure of a blog post
 interface BlogPost {
   title: string;
-  content: any; 
+  content: (BlockContent | ImageContent)[]; 
   heading: string;
   image: {
     asset: {
@@ -54,6 +67,7 @@ export default async function Home() {
             <div className="p-4">
               <h2 className="text-lg font-bold mb-2">{post.heading}</h2>
               <div className="text-gray-700 line-clamp-3 mb-4">
+                {/* Render PortableText content */}
                 <PortableText value={post.content} />
               </div>
               <Link
