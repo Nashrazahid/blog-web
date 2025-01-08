@@ -1,4 +1,3 @@
-
 import React from "react";
 import Image from "next/image";
 
@@ -20,7 +19,7 @@ export default function Home() {
       {/* Content Section */}
       <div className="relative z-10 flex items-center justify-center -mt-64 px-4">
         {/* Featured Post Card */}
-        <div className="bg-[#2d3c32] shadow-lg p-4 max-w-3xl mx-auto flex flex-col sm:flex-row gap-4 w-full">
+        <div className="bg-[#2d3c32] shadow-lg p-4 max-w-3xl mx-auto flex flex-col sm:flex-row gap-4 w-full mt-20">
           {/* Left Image Section */}
           <div className="sm:w-1/3 w-full flex justify-center sm:justify-start">
             <Image

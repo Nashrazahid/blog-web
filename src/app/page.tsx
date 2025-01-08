@@ -16,19 +16,14 @@ export default async function Home() {
     slug
   }
   `;
-
-  const post = await client.fetch(fetchBlogs);
-
- 
+const post = await client.fetch(fetchBlogs);
   return (
     <>
- 
       <Hero />
-
       {/* Blog Section */}
       <h1 className="text-center text-3xl font-bold mt-16 mb-8">Recent Blogs</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {post.map((post: any) => (
+        {post.map((post:any) => (
           <div
             key={post.slug}
             className="bg-white border border-gray-300 rounded-lg shadow-md overflow-hidden"

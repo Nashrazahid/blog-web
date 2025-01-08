@@ -1,5 +1,4 @@
 "use client";
-
 import { client } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
 import React from 'react';
@@ -10,7 +9,6 @@ import Comment from '@/components/Comment';
 interface Params {
   slug: string;
 }
-
 const page = async ({ params }: { params: Params }) => {
   console.log("Slug:", params.slug);
 
@@ -21,16 +19,13 @@ const page = async ({ params }: { params: Params }) => {
       content,
       heading,
       image
-    }
-  `;
-
+    }  `;
   const sanityData = await client.fetch(singleBlogQuery);
   console.log("Sanity Data:", sanityData);
 
   if (!sanityData?.length) {
     return <div>Blog not found</div>;
   }
-
   const blog = sanityData[0];
 
   //  Custom PortableText Components

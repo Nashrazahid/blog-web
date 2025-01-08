@@ -1,6 +1,6 @@
 
 
-export default {
+const blogs={
     name:"blog",
     title:"blog",
     type:"document",
