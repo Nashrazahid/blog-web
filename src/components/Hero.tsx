@@ -40,7 +40,7 @@ export default function Home() {
               Discover the World with Me
             </h3>
             <p className="text-sm text-gray-300 mb-2 sm:block hidden">
-              Traveling is more than just visiting new places—it's about
+              Traveling is more than just visiting new places—its about
               embracing different cultures, exploring breathtaking landscapes,
               and creating memories that last a lifetime. Through this blog, I
               share my personal travel stories, favorite destinations, and

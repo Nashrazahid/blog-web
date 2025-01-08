@@ -5,6 +5,21 @@ import Link from "next/link";
 import { PortableText } from "@portabletext/react";
 import Hero from "@/components/Hero";
 
+// Define the structure of a blog post
+interface BlogPost {
+  title: string;
+  content: any; 
+  heading: string;
+  image: {
+    asset: {
+      _ref: string;
+    };
+  };
+  slug: {
+    current: string;
+  };
+}
+
 export default async function Home() {
   // Fetch blogs
   const fetchBlogs = `
@@ -16,16 +31,17 @@ export default async function Home() {
     slug
   }
   `;
-const post = await client.fetch(fetchBlogs);
+  const posts: BlogPost[] = await client.fetch(fetchBlogs); // Define the type of the fetched posts
+
   return (
     <>
       <Hero />
       {/* Blog Section */}
       <h1 className="text-center text-3xl font-bold mt-16 mb-8">Recent Blogs</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {post.map((post:any) => (
+        {posts.map((post) => (
           <div
-            key={post.slug}
+            key={post.slug.current}
             className="bg-white border border-gray-300 rounded-lg shadow-md overflow-hidden"
           >
             <Image
