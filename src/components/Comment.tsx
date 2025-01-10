@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { auth, GoogleAuthProvider, signInWithPopup, signOut } from '@/firebaseConfig';
 
+
 const CommentSection = () => {
   const [user, setUser] = useState<{ name: string | null; email: string | null } | null>(null);
   const [comment, setComment] = useState('');
@@ -104,3 +105,4 @@ const CommentSection = () => {
 };
 
 export default CommentSection;
+ 
